@@ -11,6 +11,29 @@
 |
 */
 
+Route::get('/sayhello/{name}', function($name)
+{
+    $data = array('name' => $name);
+    return View::make('my-first-view')->with($data);
+});
+
+Route::get('/rolldice/{guess}', function($guess)
+{
+    $random = mt_rand(1,6);
+
+    if($random == $guess){
+        $output = "Your guess matched! Congratulations";
+    } else {
+        $output = "Your guess didn't match. Better luck next time!";
+    }
+
+    $data = array('guess'  => $guess,
+                  'random' => $random,
+                  'output' => $output
+                );
+    return View::make('roll-dice')->with($data);
+});
+
 Route::get('/resume', function()
 {
 	//return View::make('hello');
