@@ -1,0 +1,58 @@
+
+
+#coverimage {
+
+	z-index: 100;
+}
+.navbar {
+	z-index: 10;
+	background-color: transparent;
+	font-family: 'Oswald', 'sans-serif';
+	font-size: 2.5em;
+
+	border: 0;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #fff;
+}
+
+#header {
+	background: url(/img/norway3-sm.jpg) no-repeat center top;
+	margin-top: 80px;
+	padding-top: 250px;
+	text-align: center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 650px;
+	width: 100%;
+	background-size: 100%;
+	background-size: cover;
+	position: relative;
+	top:-90px;
+	color: white;
+}
+
+#photography-container {
+	margin-bottom: 25px;
+}
+
+#footer {
+	color: white;
+	background-color: black;
+	width: 100%;
+	height: 100px;
+	bottom: 0px;
+}
+
+#hire {
+	background-color: red;
+}
+
+#social-icons {
+	font-size: 3em;
+}
+#header-copy {
+	position: relative;
+	top: -70px;
+}

@@ -17,21 +17,15 @@ Route::get('/sayhello/{name}', function($name)
     return View::make('my-first-view')->with($data);
 });
 
+
 Route::get('/rolldice/{guess}', function($guess)
 {
-    $random = mt_rand(1,6);
-
-    if($random == $guess){
-        $output = "Your guess matched! Congratulations";
-    } else {
-        $output = "Your guess didn't match. Better luck next time!";
-    }
+    $roll = mt_rand(1,6);
 
     $data = array('guess'  => $guess,
-                  'random' => $random,
-                  'output' => $output
+                  'roll'   => $roll,
                 );
-    return View::make('roll-dice')->with($data);
+    return View::make('rolldice', $data);
 });
 
 Route::get('/resume', function()
@@ -42,6 +36,6 @@ Route::get('/resume', function()
 
 Route::get('/portfolio', function()
 {
-    return "This will show my portfolio.";
+    return View::make('portfolio');
 });
     

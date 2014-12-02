@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Louis' Laravel Blog</title>
-</head>
+	@include('partials.header')
 <body>
+	@include('partials.navbar')
+
     @yield('content')
+    
+    @include('partials.footer')
+
 </body>
 </html>

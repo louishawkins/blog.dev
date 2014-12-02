@@ -9,3 +9,6 @@ server.php
 .env.php
 .DS_Store
 Thumbs.db
+.gitignore
+.gitattributes
+artisan
