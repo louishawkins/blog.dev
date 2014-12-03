@@ -16,3 +16,4 @@ Route::get('/sayhello/{name}', 'HomeController@sayHello');
 Route::get('/rolldice/{guess}', 'HomeController@rollDice');
 Route::get('/resume', 'HomeController@showResume');
 Route::get('/portfolio', 'HomeController@showPortfolio');
+Route::resource('posts', 'PostsController');
