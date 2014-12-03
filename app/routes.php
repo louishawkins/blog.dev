@@ -17,3 +17,9 @@ Route::get('/rolldice/{guess}', 'HomeController@rollDice');
 Route::get('/resume', 'HomeController@showResume');
 Route::get('/portfolio', 'HomeController@showPortfolio');
 Route::resource('posts', 'PostsController');
+
+Route::get('orm-test', function ()
+{
+    $posts = Post::all();
+    var_dump($posts);
+});

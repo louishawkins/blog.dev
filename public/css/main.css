@@ -6,7 +6,7 @@
 }
 .navbar {
 	z-index: 10;
-	background-color: transparent;
+	background-color: black;
 	font-family: 'Oswald', 'sans-serif';
 	font-size: 2.5em;
 
@@ -16,7 +16,13 @@
 .navbar-inverse .navbar-nav>li>a {
 	color: #fff;
 }
+.firstcontainer {
+	margin-top: 80px;
+}
 
+.lastcontainer {
+	margin-bottom: 80px;
+}
 #header {
 	background: url(/img/norway3-sm.jpg) no-repeat center top;
 	margin-top: 80px;
@@ -42,6 +48,8 @@
 	background-color: black;
 	width: 100%;
 	height: 100px;
+	bottom: 0px;
+	position: relative;
 	bottom: 0px;
 }
 
