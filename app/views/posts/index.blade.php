@@ -15,8 +15,7 @@
 		<p>{{ $post->body }}</p>
 		</p>
 		@endforeach
-
-		{{ $posts->links() }}
+		{{ $posts->appends('search', 'some value')->links() }}
 	</div>
 </div>
 @stop

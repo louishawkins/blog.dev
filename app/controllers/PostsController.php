@@ -22,6 +22,20 @@ class PostsController extends BaseController {
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
+	public function search() {
+
+		$q = Input::get('search_blog');
+		$searchTerms = explode(' ', $q);
+		$query = DB::TABLE('posts');
+
+		foreach($searchTerms as $term)
+		{
+			$query->where('name', 'LIKE', '%' . $term . '%');
+		}
+
+		$results = $query->get();
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.
