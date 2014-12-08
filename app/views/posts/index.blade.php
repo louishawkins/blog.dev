@@ -1,15 +1,18 @@
 @extends('layouts.master')
 @section('content')
 @include('partials.navbar-blog')
+<link rel="stylesheet" src="css/blog.css">
 <div class="container firstcontainer lastcontainer">
 	<div class="row centered mt mb">
 		<p><a href="posts/create">Make New Post</a></p>
 		<h1>All Posts</h1>
 		@foreach($posts as $post)
-		<p>
-			{{ $post->id }}
-		<a href="posts/{{ $post->id }}"><b>{{ $post->title }}</b></a>
-			{{ $post->body }}
+		<h3 id="post-title"><a href="posts/{{ $post->id }}">{{ $post->title }}</a></h3>
+		<p id="created-at">
+			<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+			{{ $post->created_at->format('l, F jS Y @ h:i:s A') }}
+		</p>
+		<p>{{ $post->body }}</p>
 		</p>
 		@endforeach
 

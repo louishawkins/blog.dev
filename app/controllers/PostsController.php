@@ -2,6 +2,15 @@
 
 class PostsController extends BaseController {
 
+	public function __construct()
+	{
+		// call base controller constructor
+		parent::__construct();
+
+		// run auth filter before all methods on this controller except index and show.
+		$this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -41,8 +50,9 @@ class PostsController extends BaseController {
 			$all_input = Input::all();
 			$new_post = new Post();
 
-			$new_post->title = $all_input['title'];
-			$new_post->body  = $all_input['body'];
+			$new_post->title   = $all_input['title'];
+			$new_post->body    = $all_input['body'];
+			$new_post->user_id = Auth::id();
 			$new_post->save();
 
 			return Redirect::action('PostsController@show', $new_post->id);
