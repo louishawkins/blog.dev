@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+@include('partials.navbar')
 <div id="header">
 	<div class="container">
 		<div class="row" id="header-copy">

@@ -1,6 +1,6 @@
 @extends('layouts.master')
-
 @section('content')
+@include('partials.navbar-blog')
 <div class="container firstcontainer lastcontainer">
 	<div class="row centered mt mb">
 		<p><a href="posts/create">Make New Post</a></p>

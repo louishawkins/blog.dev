@@ -10,7 +10,13 @@
 	background-color: transparent;
 	font-family: 'Oswald', 'sans-serif';
 	font-size: 2.5em;
-
+	border: 0;
+}
+.navbar-black {
+	z-index: 10;
+	background-color: black;
+	font-family: 'Oswald', 'sans-serif';
+	font-size: 2.5em;
 	border: 0;
 }
 
@@ -26,8 +32,8 @@
 }
 #header {
 	background: url(/img/head_bg.jpg) no-repeat center top;
-	margin-top: 80px;
-	padding-top: 250px;
+	margin-top: 0px;
+	padding-top: 200px;
 	text-align: center;
 	background-attachment: relative;
 	background-position: center center;
