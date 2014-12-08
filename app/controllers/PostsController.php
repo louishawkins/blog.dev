@@ -1,6 +1,6 @@
 <?php
 
-class PostsController extends \BaseController {
+class PostsController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::paginate(5);
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
@@ -32,17 +32,20 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$all_input = Input::all();
-		$new_post = new Post();
+		//create the validator
+		$validator = Validator::make(Input::all(), Post::$rules);
 
-		if((Input::has('title') && Input::has('body'))) {
+		if ($validator->fails()) {
+			return Redirect::back()->withInput()->withErrors($validator);
+		} else {
+			$all_input = Input::all();
+			$new_post = new Post();
+
 			$new_post->title = $all_input['title'];
 			$new_post->body  = $all_input['body'];
 			$new_post->save();
 
 			return Redirect::action('PostsController@show', $new_post->id);
-		} else {
-			return Redirect::action('PostsController@index');
 		}
 	}
 
@@ -68,7 +71,8 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return "Shows a form for editing a specific post";
+		$post = Post::find($id);
+		return View::make('posts.edit')->with('post', $post);
 	}
 
 
@@ -80,7 +84,14 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		return "Updates a particular post";
+		$post = Post::find($id);
+
+		$post->title = Input::get('title');
+		$post->body = Input::get('body');
+
+		$post->save();
+
+		return Redirect::back();
 	}
 
 
@@ -92,7 +103,9 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		return "Deletes a specific post";
+		$post = Post::find($id);
+		$post->delete();
+		return Redirect::action('PostsController@index');
 	}
 
 

@@ -1,12 +1,13 @@
 
 
 #coverimage {
-
 	z-index: 100;
+	height: 200px;
+	width: 200px;
 }
 .navbar {
 	z-index: 10;
-	background-color: black;
+	background-color: transparent;
 	font-family: 'Oswald', 'sans-serif';
 	font-size: 2.5em;
 
@@ -24,7 +25,7 @@
 	margin-bottom: 80px;
 }
 #header {
-	background: url(/img/norway3-sm.jpg) no-repeat center top;
+	background: url(/img/head_bg.jpg) no-repeat center top;
 	margin-top: 80px;
 	padding-top: 250px;
 	text-align: center;
@@ -35,7 +36,7 @@
 	background-size: 100%;
 	background-size: cover;
 	position: relative;
-	top:-90px;
+	top:0px;
 	color: white;
 }
 

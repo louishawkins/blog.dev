@@ -11,15 +11,10 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', 'HomeController@showPortfolio');
 Route::get('/sayhello/{name}', 'HomeController@sayHello');
 Route::get('/rolldice/{guess}', 'HomeController@rollDice');
 Route::get('/resume', 'HomeController@showResume');
 Route::get('/portfolio', 'HomeController@showPortfolio');
 Route::resource('posts', 'PostsController');
 
-Route::get('orm-test', function ()
-{
-    $posts = Post::all();
-    var_dump($posts);
-});
