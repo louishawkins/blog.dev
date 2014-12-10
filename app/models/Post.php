@@ -9,6 +9,8 @@ class Post extends BaseModel
 
 	protected $table = 'posts';
 
+	protected $fillable = array('title', 'body', 'user_id');
+
 	public function user()
 	{
 		return $this->belongsTo('User');

@@ -1,5 +1,3 @@
-
-
 #coverimage {
 	z-index: 100;
 	height: 200px;
@@ -9,19 +7,35 @@
 	z-index: 10;
 	background-color: transparent;
 	font-family: 'Oswald', 'sans-serif';
-	font-size: 2.5em;
+	font-size: 1em;
 	border: 0;
 }
+
+.post-title {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.created-at {
+	font-size: 11px;
+	color: grey;
+	font-style: italic;
+}
+
 .navbar-black {
 	z-index: 10;
 	background-color: black;
-	font-family: 'Oswald', 'sans-serif';
-	font-size: 2.5em;
 	border: 0;
 }
 
 .navbar-inverse .navbar-nav>li>a {
 	color: #fff;
+	font-family: 'Oswald', 'sans-serif';
+	font-size: 2.5em;	
+}
+
+#search-bar{
+	padding: 10px;
 }
 .firstcontainer {
 	margin-top: 80px;
@@ -29,6 +43,17 @@
 
 .lastcontainer {
 	margin-bottom: 80px;
+}
+
+#sidebar-column {
+	padding-left: 30px;
+	padding-top: 50px;
+	padding-right: 25px;
+	padding-bottom: 50px;
+}
+
+#show-posts-column {
+	padding: 25px;
 }
 #header {
 	background: url(/img/head_bg.jpg) no-repeat center top;

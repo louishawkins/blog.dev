@@ -46,8 +46,8 @@ Route::filter('auth', function()
 			return Redirect::guest('login');
 		}
 	}
-});
 
+});
 
 Route::filter('auth.basic', function()
 {

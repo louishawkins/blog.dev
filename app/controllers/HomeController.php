@@ -15,6 +15,29 @@ class HomeController extends BaseController {
 	|
 	*/
 
+	public function authenticate()
+	{
+		$email = Input::get('email');
+		$password = Input::get('password');
+		
+		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+    		return Redirect::intended('/');
+		} else {
+   			return Redirect::action('HomeController@showLogin');
+		}
+	}
+
+	public function showLogin()
+	{
+		return View::make('login');
+	}
+
+	public function logout()
+	{
+		Auth::logout();
+		return Redirect::action('HomeController@showPortfolio');
+	}
+
 	public function showWelcome()
 	{
 		return Redirect::action('HomeController@sayHello', ['Louis']);

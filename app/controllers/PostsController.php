@@ -8,7 +8,7 @@ class PostsController extends BaseController {
 		parent::__construct();
 
 		// run auth filter before all methods on this controller except index and show.
-		$this->beforeFilter('auth.basic', array('except' => array('index', 'show')));
+		$this->beforeFilter('auth', array('except' => array('index', 'show')));
 	}
 
 	/**
@@ -18,24 +18,17 @@ class PostsController extends BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(5);
+		$query = Post::with('user');
+		$search = Input::get('search');
+
+		if(!is_null($search)){
+			$query->where('title', 'like', '%' . $search . '%')
+				  ->orWhere('body', 'like', '%' . $search . '%');
+		} 
+
+		$posts = $query->orderBy('created_at', 'desc')->paginate(4);
 		return View::make('posts.index')->with('posts', $posts);
 	}
-
-	public function search() {
-
-		$q = Input::get('search_blog');
-		$searchTerms = explode(' ', $q);
-		$query = DB::TABLE('posts');
-
-		foreach($searchTerms as $term)
-		{
-			$query->where('name', 'LIKE', '%' . $term . '%');
-		}
-
-		$results = $query->get();
-	}
-
 
 	/**
 	 * Show the form for creating a new resource.
@@ -131,6 +124,4 @@ class PostsController extends BaseController {
 		$post->delete();
 		return Redirect::action('PostsController@index');
 	}
-
-
 }

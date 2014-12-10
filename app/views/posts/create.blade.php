@@ -8,7 +8,7 @@
 		{{ $errors->first('title', '<span class="help-block">:message</span>') }}
 
 		<h1>Create New Post</h1>
-		{{ Form::open(array('action' => 'PostsController@store')) }}
+			{{ Form::open(array('action' => 'PostsController@store')) }}
 			{{ Form::label('title', 'Title') }}
 			{{ Form::text('title', Input::old('title')) }}
 			<br>

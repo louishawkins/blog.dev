@@ -12,12 +12,12 @@
 */
 
 Route::get('/', 'HomeController@showPortfolio');
-Route::get('/sayhello/{name}', 'HomeController@sayHello');
-Route::get('/rolldice/{guess}', 'HomeController@rollDice');
-Route::get('/resume', 'HomeController@showResume');
-Route::get('/portfolio', 'HomeController@showPortfolio');
+Route::get('login', 'HomeController@showLogin');
+Route::get('logout', 'HomeController@logout');
+Route::post('login', 'HomeController@authenticate');
 Route::resource('posts', 'PostsController');
 
+/*
 Route::get('orm-test', function()
 {
 	// find all posts
@@ -41,3 +41,4 @@ Route::get('orm-test', function()
 	$posts = $query->get();
 	$posts = $query->paginate(5);
 });
+*/
