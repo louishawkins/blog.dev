@@ -1,98 +1,102 @@
-#coverimage {
-	z-index: 100;
-	height: 200px;
-	width: 200px;
+body {
+	background-image: url('../img/background.png');
+	background-repeat: true;
+	background-attachment: fixed;
 }
+#primary-container{
+	padding: 0px;
+}
+#masthead {
+	top: 0px;
+	z-index: 1000;
+}
+
 .navbar {
-	z-index: 10;
-	background-color: transparent;
-	font-family: 'Oswald', 'sans-serif';
-	font-size: 1em;
-	border: 0;
+	font-family: 'Lato', sans-serif;
+	font-size:18px;
+	color:white;
+	border-radius: 0px;
+	z-index: 100;
+	border:0;
+	background-color: white;
+	background-image: url('/img/backgrounds/2.jpg');
+	/*background-repeat: no-repeat;*/
+	background-position: -50px -100px;
 }
 
-.post-title {
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.created-at {
-	font-size: 11px;
-	color: grey;
-	font-style: italic;
-}
-
-.navbar-black {
-	z-index: 10;
-	background-color: black;
-	border: 0;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-	color: #fff;
-	font-family: 'Oswald', 'sans-serif';
-	font-size: 2.5em;	
-}
-
-#search-bar{
-	padding: 10px;
-}
-.firstcontainer {
-	margin-top: 80px;
-}
-
-.lastcontainer {
-	margin-bottom: 80px;
-}
-
-#sidebar-column {
-	padding-left: 30px;
-	padding-top: 50px;
-	padding-right: 25px;
-	padding-bottom: 50px;
-}
-
-#show-posts-column {
-	padding: 25px;
-}
-#header {
-	background: url(/img/head_bg.jpg) no-repeat center top;
-	margin-top: 0px;
-	padding-top: 190px;
-	text-align: center;
-	background-attachment: relative;
-	background-position: center center;
-	min-height: 650px;
-	width: 100%;
-	background-size: 100%;
-	background-size: cover;
-	position: relative;
-	top:0px;
-	color: white;
-}
-
-#photography-container {
-	margin-bottom: 25px;
-}
-
-#footer {
-	color: white;
-	background-color: black;
-	width: 100%;
+.navbar.affix-top{
 	height: 100px;
-	bottom: 0px;
-	position: relative;
-	bottom: 0px;
+	width: 100%;
+	padding-top:20px;
 }
 
-#hire {
-	background-color: red;
+.navbar.affix{
+	position: fixed;
+	height: 50px;
+  	right: 0;
+  	left: 0;
+  	width: 100%;
+  	z-index: 1030;
+  	padding-left: 0;
+  	padding-right: 150px;
+  	margin: auto;
+}
+#navbar-container{
+	margin:0 auto;
+	width: 90%;
+}
+.nav-row{
+	width: 100%;
+	margin: 0;
 }
 
-#social-icons {
-	font-size: 3em;
+.posts{
+	z-index: 100;
 }
-#header-copy {
-	position: relative;
-	top: -70px;
+
+.post{
+	background-color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 20px;
+	padding-top:0px;
+}
+.column-right{
+	padding:0px;
+}
+
+#name-card{
+	background-color: white;
+	background-image: url('/img/bg_small.jpg');
+	background-repeat: no-repeat;
+	background-position: 0 -50px;
+	height: 400px;
+	width: 100%;
+	margin-top:20px;
+	padding:0px;
+}
+
+#profile-pic-row{
+	position:relative;
+	top:100px;
+}
+
+#name-description-row{
+	position:relative;
+	top:100px;
+}
+
+#profile-pic{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.post-img-container{
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:0px;
+}
+
+.no-padding{
+	padding:0px;
 }

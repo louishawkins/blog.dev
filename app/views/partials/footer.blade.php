@@ -1,7 +1,10 @@
 <!-- Footer -->
-<div class="container" id="footer">
-	<div class="row">
-		<h3>FOOTER !!!</h3>
+<div class="row" id="footer-row">
+	<div class="container-fluid" id="footer-container">
 	</div>
 </div>
-<script src="/js/bootstrap.min.js"></script>
+
+<!-- Scripts -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/affix.js"></script>

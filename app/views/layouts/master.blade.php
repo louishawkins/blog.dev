@@ -2,6 +2,14 @@
 <html lang="en">
 	@include('partials.header')
 <body>
-    @yield('content')
+	@include('partials.masthead')
+	
+	<div class="row" id="primary-row">
+		<div class="container" id="primary-container">
+		    @yield('content')
+		</div>
+	</div>
+
+	@include('partials.footer')
 </body>
 </html>

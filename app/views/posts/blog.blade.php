@@ -15,7 +15,6 @@
 				<h3 class="post-title"><a href="posts/{{ $post->id }}">{{ $post->title }}</a></h3>
 				<div class="created-at">{{ $post->created_at->format('l, F jS Y @ h:i:s A') }}</div>
 				<p>{{ $post->body }}</p>
-				</p>
 			@endforeach
 			{{ $posts->links() }}
 		</div><!--posts column-->

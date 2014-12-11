@@ -27,7 +27,7 @@ class PostsController extends BaseController {
 		} 
 
 		$posts = $query->orderBy('created_at', 'desc')->paginate(4);
-		return View::make('posts.index')->with('posts', $posts);
+		return View::make('index')->with('posts', $posts);
 	}
 
 	/**

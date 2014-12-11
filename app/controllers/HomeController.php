@@ -57,8 +57,8 @@ class HomeController extends BaseController {
     	return View::make('rolldice', $data);
 	}
 
-	public function showPortfolio(){
-		return View::make('portfolio');
+	public function showIndex(){
+		return View::make('index');
 	}
 
 	public function showResume(){

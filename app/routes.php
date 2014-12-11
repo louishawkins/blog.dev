@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@showPortfolio');
+Route::get('/', 'PostsController@index');
 Route::get('login', 'HomeController@showLogin');
 Route::get('logout', 'HomeController@logout');
 Route::post('login', 'HomeController@authenticate');
