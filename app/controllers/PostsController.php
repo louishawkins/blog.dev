@@ -9,6 +9,11 @@ class PostsController extends BaseController {
 
 		// run auth filter before all methods on this controller except index and show.
 		$this->beforeFilter('auth', array('except' => array('index', 'show')));
+		$this->beforeFilter(function(){
+			if(Auth::user()->role_id != 1){
+				return Redirect::to('/');
+			}
+		}, array('except' => array('index', 'show')));
 	}
 
 	/**

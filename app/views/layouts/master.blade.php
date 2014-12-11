@@ -2,8 +2,9 @@
 <html lang="en">
 	@include('partials.header')
 <body>
-	@include('partials.masthead')
 	
+	@include('partials.masthead')
+
 	<div class="row" id="primary-row">
 		<div class="container" id="primary-container">
 		    @yield('content')

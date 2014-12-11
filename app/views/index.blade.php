@@ -14,7 +14,7 @@
 
 <!-- name card -->
 <div class="column-right col-md-4">
-	<div class="container-fluid no-padding">
+	<div class="container-fluid">
 		<div id="name-card">
 			<div id="profile-pic-row" class="row">
 				<div id="profile-pic-container" class="container-fluid">
